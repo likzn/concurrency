@@ -1,4 +1,4 @@
-package com.likzn.concurrency.atomic;
+package com.likzn.concurrency.example.count;
 
 import com.likzn.concurrency.annotation.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Slf4j
 @ThreadSafe
-public class ConcurrencyAtomic1 {
+public class ConcurrencyExample2 {
     static AtomicInteger count = new AtomicInteger(0);
 
     //请求总数

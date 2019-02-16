@@ -1,13 +1,9 @@
-package com.likzn.concurrency.atomic;
+package com.likzn.concurrency.example.count;
 
-import com.likzn.concurrency.annotation.ThreadSafe;
+import com.likzn.concurrency.annotation.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.*;
 
 /**
  * @auther: Li jx
@@ -15,17 +11,16 @@ import java.util.concurrent.atomic.AtomicLong;
  * @description:
  */
 @Slf4j
-@ThreadSafe
-public class ConcurrencyAtomic2 {
-    static AtomicLong count = new AtomicLong(0);
-
+@NotThreadSafe
+public class ConcurrencyExample1 {
+    static int count = 0;
     //请求总数
     final static int CLINET_TOTAL = 2000;
     //并发总数
     final static int THREAD_TOTAL = 50;
 
     private static void add(){
-        count.getAndIncrement();
+        count++;
     }
     public static void main(String[] args) throws Exception{
         //计数器闭锁，await（）后等待所有线程，完成一个countdown一个

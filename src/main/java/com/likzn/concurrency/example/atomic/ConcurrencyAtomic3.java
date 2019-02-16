@@ -1,4 +1,4 @@
-package com.likzn.concurrency.atomic;
+package com.likzn.concurrency.example.atomic;
 
 import com.likzn.concurrency.annotation.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
