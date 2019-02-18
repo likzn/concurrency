@@ -12,17 +12,18 @@ import com.likzn.concurrency.annotation.NotThreadSafe;
 @NotRecommend
 public class Escape {
     /*
-    对象还未构建完成，变量就被其他线程所见
+    对象还未构建完成，就被其他线程所见
      */
 
     private int a = 0;
 
-    public Escape(){
+    public Escape() {
         new innerClass();
     }
+
     public class innerClass {
 
-        public innerClass(){
+        public innerClass() {
             System.out.println(Escape.this.a);
         }
 

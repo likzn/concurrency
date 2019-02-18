@@ -24,17 +24,18 @@ public class ConcurrencyAtomic3 {
     //并发总数
     final static int THREAD_TOTAL = 50;
 
-    private static void add(){
+    private static void add() {
         count.add(1);
     }
-    public static void main(String[] args) throws Exception{
+
+    public static void main(String[] args) throws Exception {
         //计数器闭锁，await（）后等待所有线程，完成一个countdown一个
         CountDownLatch countDownLatch = new CountDownLatch(CLINET_TOTAL);
         //信号量，可以控制并发数
         Semaphore semaphore = new Semaphore(THREAD_TOTAL);
         ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i = 0; i < CLINET_TOTAL; i++) {
-            executorService.execute(()->{
+            executorService.execute(() -> {
                 try {
                     semaphore.acquire();
                     add();
