@@ -10,7 +10,7 @@ import static com.likzn.concurrency.threadlocal.Threadlocal.THREAD_LOCAL;
 /**
  * @auther: Li jx
  * @date: 2019/2/18 22:19
- * @description:
+ * @description: 配置过滤器
  */
 
 public class HttpFilter implements Filter {
